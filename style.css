@@ -1,0 +1,64 @@
+/* Cenna site: the app's design system on the web. Paper and ink, one carbon-blue accent, hairline rules,
+   no cards, no shadows. Archivo for headlines, the system sans for body. */
+:root {
+  --paper: #edefe9;
+  --sheet: #f7f8f4;
+  --ink: #171c22;
+  --rule: #c9cdc4;
+  --muted: #6b7168;
+  --spot: #2b3a8f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #12161a;
+    --sheet: #171c22;
+    --ink: #e8eae3;
+    --rule: #2a3138;
+    --muted: #8a9188;
+    --spot: #8496ee;
+  }
+}
+* { box-sizing: border-box; }
+html { color-scheme: light dark; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main { max-width: 680px; margin: 0 auto; padding: 32px 20px 64px; }
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 8px 0 12px; }
+header a.mark {
+  font-family: Archivo, "Archivo Variable", -apple-system, sans-serif;
+  font-variation-settings: "wdth" 120, "wght" 700;
+  font-weight: 700; font-size: 22px; letter-spacing: 0.01em; color: var(--ink); text-decoration: none;
+}
+header nav a { color: var(--muted); text-decoration: none; margin-left: 16px; font-size: 15px; }
+header nav a:hover, header nav a[aria-current] { color: var(--spot); }
+.double { border: 0; border-top: 2px solid var(--ink); position: relative; margin: 0 0 24px; }
+.double::after { content: ""; position: absolute; left: 0; right: 0; top: 4px; border-top: 2px solid var(--ink); }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
+h1 {
+  font-family: Archivo, "Archivo Variable", -apple-system, sans-serif;
+  font-variation-settings: "wdth" 120, "wght" 700;
+  font-weight: 700; font-size: 40px; line-height: 1.05; letter-spacing: -0.01em; margin: 8px 0 16px;
+}
+h2 { font-size: 20px; margin: 32px 0 8px; }
+p, li { color: var(--ink); }
+p.lede { font-size: 20px; color: var(--muted); }
+.muted { color: var(--muted); }
+a { color: var(--spot); }
+ol.index { list-style: none; padding: 0; margin: 0; }
+ol.index li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+ol.index li .n { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; color: var(--muted); padding-top: 4px; }
+ol.index li strong { display: block; font-size: 17px; }
+ol.index li span { color: var(--muted); }
+.button {
+  display: inline-block; background: var(--ink); color: var(--paper); text-decoration: none;
+  padding: 12px 20px; border-radius: 4px; font-weight: 600; margin-top: 8px;
+}
+footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+footer a { color: var(--muted); margin-right: 16px; }
+dl dt { font-weight: 600; margin-top: 16px; }
+dl dd { margin: 4px 0 0; color: var(--muted); }
