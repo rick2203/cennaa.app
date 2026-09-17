@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Open Cenna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a class="mark" href="/">Cenna</a>
+  </header>
+  <hr class="double">
+  <h1>Open this in Cenna</h1>
+  <p class="lede">The sign-in link belongs on the phone that has Cenna installed. If you are on that phone and the app did not open, tap the button.</p>
+  <p><a class="button" id="open" href="#">Open Cenna</a></p>
+  <p class="muted">Or open Cenna, choose "Continue with email", and type the 8-digit code from the same email. The link and the code expire together after an hour.</p>
+  <footer><a href="/support">Support</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><br>© 2026 Cenna</footer>
+</main>
+<script>
+  // Same parameters, on the app's own scheme, for the case where the universal link was not honoured.
+  var target = 'cenna://auth/verify' + window.location.search;
+  document.getElementById('open').setAttribute('href', target);
+</script>
+</body>
+</html>
